@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>welcome</title>
+  <link rel="stylesheet" href="https://use.typekit.net/ybh7dai.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="welcome-shell">
+    <div class="welcome-track" id="welcomeTrack">
+      <!-- Column 1: stacked IBM Plex text blocks -->
+      <div class="panel c1"><div class="t-body">
+        write down three sentences, three words,<br>
+        a poem with three lines, anything really.<br><br>
+        write down the most random thing that you<br>
+        will never say out loud. don’t worry,<br>
+        your thoughts are safe here.<br><br>
+        you won’t even recognize your own words<br>
+        once we’re done here.
+      </div></div>
+      <div class="panel c1"><div class="t-body">
+        write down three sentences, three words,<br>
+        a poem with three lines, anything really.<br><br>
+        write down the most random thing that you<br>
+        will never say out loud. don’t worry,<br>
+        your thoughts are safe here.<br><br>
+        you won’t even recognize your own words<br>
+        once we’re done here.
+      </div></div>
+      <div class="panel c1"><div class="t-body">
+        write down three sentences, three words,<br>
+        a poem with three lines, anything really.<br><br>
+        write down the most random thing that you<br>
+        will never say out loud. don’t worry,<br>
+        your thoughts are safe here.<br><br>
+        you won’t even recognize your own words<br>
+        once we’re done here.
+      </div></div>
+
+      <!-- Columns 2–3: big LoRes headline -->
+      <div class="panel c2-3">
+        <div class="t-block">things i wish i said</div>
+        <div class="t-block-2">[ but never did ]</div>
+      </div>
+
+      <!-- Column 5: Marion caps wide -->
+      <div class="panel c5">
+        <div class="t-block-3">
+          THE MOST<br>RANDOM THING<br>THAT YOU WILL<br>NEVER SAY OUT<br>LOUD. DON’T<br>WORRY, YOUR<br>THOUGHTS ARE<br>SAFE HERE.<br><br>
+          YOU WON’T EVEN<br>R E C O G N I Z E<br>YOUR OWN WORDS<br>ONCE WE’RE DONE<br>HERE.
+        </div>
+      </div>
+
+      <!-- Lower blocks -->
+      <div class="panel c1"><div class="t-body">
+        write down three sentences, three words,<br>
+        a poem with three lines, anything really.<br><br>
+        write down the most random thing that you<br>
+        will never say out loud. don’t worry,<br>
+        your thoughts are safe here.<br><br>
+        you won’t even recognize your own words<br>
+        once we’re done here.
+      </div></div>
+
+      <div class="panel c2-3">
+        <div class="t-block">things i wish i said</div>
+        <div class="t-block-2">[ and will now ]</div>
+      </div>
+
+      <div class="panel c5">
+        <div class="t-block-3">
+          WRITE DOWN<br>T H R E E<br>S E N T E N C E S,<br>THREE WORDS,<br>A POEM WITH<br>THREE LINES,<br>A N Y T H I N G<br>REALLY.<br><br>
+          WRITE DOWN THE<br>MOST RANDOM THING<br>THAT YOU WILL<br>NEVER SAY OUT<br>LOUD. DON’T<br>WORRY, YOUR<br>THOUGHTS ARE<br>SAFE HERE.<br><br>
+          YOU WON’T EVEN<br>R E C O G N I Z E<br>YOUR OWN<br>WORDS ONCE<br>WE’RE DONE<br>HERE.
+        </div>
+      </div>
+
+      <div class="panel c5"><div class="t-body">
+        write down three sentences, three words,<br>
+        a poem with three lines, anything really.<br><br>
+        write down the most random thing that you<br>
+        will never say out loud. don’t worry,<br>
+        your thoughts are safe here.<br><br>
+        you won’t even recognize your own words<br>
+        once we’re done here.
+      </div></div>
+      <div class="panel c5"><div class="t-body">
+        write down three sentences, three words,<br>
+        a poem with three lines, anything really.<br><br>
+        write down the most random thing that you<br>
+        will never say out loud. don’t worry,<br>
+        your thoughts are safe here.<br><br>
+        you won’t even recognize your own words<br>
+        once we’re done here.
+      </div></div>
+
+      <!-- Ready button -->
+      <div class="panel ready-wrapper">
+        <a class="pill" href="pageInput.html">ready?</a>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // Scroll reveal observer (reverses on scroll out)
+    const panels = document.querySelectorAll('.panel');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('in-view');
+        else e.target.classList.remove('in-view');
+      });
+    }, { threshold: 0.12 });
+    panels.forEach(p => obs.observe(p));
+  </script>
+</body>
+</html>

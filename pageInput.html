@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="input-shell">
+    <div class="input-card">
+      <div class="input-row">
+        <input id="line1" class="input-pill" type="text" placeholder="- first line -" autocomplete="off" spellcheck="false">
+        <input id="line2" class="input-pill" type="text" placeholder="- second line -" autocomplete="off" spellcheck="false">
+        <input id="line3" class="input-pill" type="text" placeholder="- third line -" autocomplete="off" spellcheck="false">
+      </div>
+      <div class="input-actions">
+        <a id="goPage1" class="btn" href="page1.html">when you're sure, continue</a>
+      </div>
+    </div>
+  </div>
+  <script>
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    const line3 = document.getElementById('line3');
+    const go = document.getElementById('goPage1');
+
+    // Prefill
+    try {
+      const saved = JSON.parse(localStorage.getItem('inputLines') || '[]');
+      if (Array.isArray(saved)) {
+        if (saved[0]) line1.value = saved[0];
+        if (saved[1]) line2.value = saved[1];
+        if (saved[2]) line3.value = saved[2];
+      }
+    } catch(_) {}
+
+    go.addEventListener('click', (e) => {
+      e.preventDefault();
+      const lines = [
+        (line1.value || '').trim(),
+        (line2.value || '').trim(),
+        (line3.value || '').trim()
+      ];
+      localStorage.setItem('inputLines', JSON.stringify(lines));
+      // clear previous chain
+      for (let i = 1; i <= 5; i++) localStorage.removeItem(`distortionStep${i}`);
+      window.location.href = go.href;
+    });
+  </script>
+</body>
+</html>
